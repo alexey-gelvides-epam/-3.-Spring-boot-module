@@ -13,8 +13,6 @@ import java.util.stream.IntStream;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class SpringBootModuleApplication implements CommandLineRunner {
-    @Autowired
-    private VisitorService visitorService;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootModuleApplication.class, args);
@@ -22,14 +20,6 @@ public class SpringBootModuleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        System.out.println("Hello world");
-        IntStream.range(1, 10)
-                .forEach(i -> {
-                    var visitor = new Visitor();
-                    visitor.setName("UserName " + i)
-                            .setLastName("UserLastName " + i)
-                            .setPhone("UserPhone " + i);
-                    visitorService.saveUser(visitor);
-                });
+        System.out.println("Hello world");
     }
 }
