@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: 'postgres:14'
+    container_name: 'java-postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=qwerty'
+      - 'POSTGRES_DB=postgres'
+    ports:
+      - 5433:5432
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  dev:
+    image: 'postgres:14'
+    container_name: 'dev-postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=qwerty'
+      - 'POSTGRES_DB=postgres'
+    ports:
+      - 5434:5432
+    volumes:
+      - ./dev:/var/lib/postgresql/data
+
+  stage:
+    image: 'postgres:14'
+    container_name: 'stage-postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=qwerty'
+      - 'POSTGRES_DB=postgres'
+    ports:
+      - 5435:5432
+    volumes:
+      - ./stage:/var/lib/postgresql/data
+
+  prod:
+    image: 'postgres:14'
+    container_name: 'prod-postgres'
+    environment:
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=qwerty'
+      - 'POSTGRES_DB=postgres'
+    ports:
+      - 5436:5432
+    volumes:
+      - ./prod:/var/lib/postgresql/data
+
+  consul:
+    image: consul
+    ports:
+      - '8300:8300'
+      - '8301:8301'
+      - '8301:8301/udp'
+      - '8500:8500'
+      - '8600:8600'
+      - '8600:8600/udp'
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
