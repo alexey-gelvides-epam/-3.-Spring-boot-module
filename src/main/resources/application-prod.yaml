@@ -1,0 +1,36 @@
+server:
+  port: 8084
+
+spring:
+  datasource:
+    url: ${POSTGRES_URL:jdbc:postgresql://0.0.0.0:5436/postgres}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_USER:qwerty}
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        instance-id: ${spring.application.name}:${random.value}
+    application:
+      name: spring-boot-module-server
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    clear-checksums: true
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: health,prometheus,info,metric
+    metrics:
+      export:
+        prometheus:
+          enabled: true
+      distribution:
+        percentiles-histogram:
+          "[http.server.requests]": true

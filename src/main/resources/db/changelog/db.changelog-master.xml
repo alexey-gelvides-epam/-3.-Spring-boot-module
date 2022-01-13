@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd">
+    
+    <preConditions>
+        <dbms type="postgresql"/>
+    </preConditions>
+
+    <changeSet id="0" author="alekseyG" context="init-table">
+        <tagDatabase tag="db_init"/>
+    </changeSet>
+
+
+
+    <include file="v-1.0/db.changelog-v1.0.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="1" author="alekseyG" context="create-table">
+        <tagDatabase tag="v1.0"/>
+    </changeSet>
+
+
+
+    <include file="v-2.0/db.changelog-v2.0.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="3" author="alekseyG" context="drop-visitor-login-pass">
+        <tagDatabase tag="v2.0"/>
+    </changeSet>
+
+</databaseChangeLog>
