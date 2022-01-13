@@ -5,8 +5,6 @@ import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.util.Dictionary;
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Component

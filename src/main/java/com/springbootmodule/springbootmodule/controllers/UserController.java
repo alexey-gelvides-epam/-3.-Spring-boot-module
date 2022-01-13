@@ -1,11 +1,9 @@
 package com.springbootmodule.springbootmodule.controllers;
 
-import com.springbootmodule.springbootmodule.entity.Permission;
 import com.springbootmodule.springbootmodule.entity.Visitor;
 import com.springbootmodule.springbootmodule.services.VisitorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

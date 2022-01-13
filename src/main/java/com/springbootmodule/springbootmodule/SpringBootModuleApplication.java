@@ -22,7 +22,7 @@ public class SpringBootModuleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello world");
+//        System.out.println("Hello world");
         IntStream.range(1, 10)
                 .forEach(i -> {
                     var visitor = new Visitor();
