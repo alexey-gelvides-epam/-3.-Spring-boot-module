@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 @Accessors(chain = true)
-public class Visitor {
+public class Guest {
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
