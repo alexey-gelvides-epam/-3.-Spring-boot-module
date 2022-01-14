@@ -12,11 +12,11 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 @Accessors(chain = true)
-public class Visitor {
+public class Guest {
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
     private String name;
     private String lastName;

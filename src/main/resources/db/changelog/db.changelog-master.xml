@@ -28,7 +28,7 @@
 
     <include file="v-2.0/db.changelog-v2.0.xml" relativeToChangelogFile="true"/>
 
-    <changeSet id="3" author="alekseyG" context="drop-visitor-login-pass">
+    <changeSet id="3" author="alekseyG" context="drop-guest-login-pass">
         <tagDatabase tag="v2.0"/>
     </changeSet>
 
